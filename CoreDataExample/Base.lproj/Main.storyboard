@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Core Data Example-->
+        <!--Title-->
         <scene sceneID="g7Y-I7-n7k">
             <objects>
                 <tableViewController id="6Xt-mM-nbm" customClass="MainTableVC" customModule="CoreDataExample" customModuleProvider="target" sceneMemberID="viewController">
@@ -30,7 +30,13 @@
                             <outlet property="delegate" destination="6Xt-mM-nbm" id="dgl-kw-qZs"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Core Data Example" id="LDv-Mz-wE0"/>
+                    <navigationItem key="navigationItem" title="Title" id="MXt-mJ-TtQ">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="MPP-yZ-cqh">
+                            <connections>
+                                <action selector="addTapped:" destination="6Xt-mM-nbm" id="Uhg-tZ-ij5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTl-19-xUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -56,6 +62,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
