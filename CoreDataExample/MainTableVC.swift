@@ -85,5 +85,27 @@ class MainTableVC: UITableViewController {
         
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
+            
+            //Which person to remove
+            let personToRemove = self.items![indexPath.row]
+            
+            //Delete person
+            self.context.delete(personToRemove)
 
+            do{
+                try self.context.save()
+            }
+            catch {
+                
+            }
+            
+            self.fetchPeople()
+            
+            
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }
